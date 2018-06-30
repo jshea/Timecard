@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { TimecardRoutingModule } from './timecard-routing.module';
+import { TimecardComponent } from './timecard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -14,13 +14,13 @@ import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    TimecardComponent,
     MainNavComponent,
     TableComponentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    TimecardRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
@@ -35,7 +35,7 @@ import { environment } from '../environments/environment';
   ],
   providers: [],
   bootstrap: [
-    AppComponent
+    TimecardComponent
   ]
 })
-export class AppModule { }
+export class TimecardModule { }
