@@ -6,3 +6,11 @@
   width: 200px;
   box-shadow: 3px 0 6px rgba(0,0,0,.24);
 }
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.wrapper {
+  margin: 50px;
+}

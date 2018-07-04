@@ -32,11 +32,37 @@
         </button>
 
         <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="openSomethingInterestingDialog()">Something Interesting</button>
+          <button mat-menu-item (click)="openAddDialog()">New something</button>
           <button mat-menu-item (click)="loadWams()">Load WAMs</button>
         </mat-menu>
 
       </mat-toolbar>
+
+      <!--
+      <div class="wrapper">
+        <tc-timecard-input *ngIf="feature === 'timecard'"
+          [timecard]="timecard"
+          [wams]="wams">
+        </tc-timecard-input>
+
+        <tc-allocation *ngIf="feature === 'allocations'"
+          [allocation]="timecard.allocation">
+        </tc-allocation>
+
+        <tc-accrual *ngIf="feature === 'accrual'"
+          [accrual]="timecard.accrual">
+        </tc-accrual>
+
+        <tc-wam *ngIf="feature === 'wam'"
+          [wams]="wams">
+        </tc-wam>
+
+        <tc-accrual *ngIf="feature == 'accruals'"
+          [weekEndDate]="timecard.weekEndDate"
+          [accrual]="timecard.accrual">
+        </tc-accrual>
+      </div>
+      -->
 
     </mat-sidenav-content>
 

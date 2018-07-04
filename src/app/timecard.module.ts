@@ -1,16 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
+import { ServiceWorkerModule } from '@angular/service-worker';
+
 import { MaterialModule } from './shared/material.module';
+import { LayoutModule } from '@angular/cdk/layout';
 
 import { TimecardRoutingModule } from './timecard-routing.module';
-import { TimecardComponent } from './timecard.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MainNavComponent } from './main-nav/main-nav.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { TableComponentComponent } from './table-component/table-component.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
+
 import { environment } from '../environments/environment';
+import { AddDialogComponent } from './components/add-dialog/add-dialog.component';
+import { TableComponentComponent } from './table-component/table-component.component';
+import { TimecardComponent } from './timecard.component';
 
 @NgModule({
   imports: [
@@ -22,11 +24,14 @@ import { environment } from '../environments/environment';
     TimecardRoutingModule
   ],
   declarations: [
+    AddDialogComponent,
     TimecardComponent,
-    MainNavComponent,
     TableComponentComponent
   ],
   providers: [],
+  entryComponents: [
+    AddDialogComponent
+  ],
   bootstrap: [
     TimecardComponent
   ]
