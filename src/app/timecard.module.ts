@@ -10,9 +10,14 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { TimecardRoutingModule } from './timecard-routing.module';
 
 import { environment } from '../environments/environment';
+import { AccrualComponent } from './components/accrual/accrual.component';
 import { AddDialogComponent } from './components/add-dialog/add-dialog.component';
+import { AllocationComponent } from './components/allocation/allocation.component';
 import { TableComponentComponent } from './table-component/table-component.component';
 import { TimecardComponent } from './timecard.component';
+import { TimecardInputComponent } from './components/timecard-input/timecard-input.component';
+import { WamComponent } from './components/wam/wam.component';
+import { UserService } from './shared/services/user.service';
 
 @NgModule({
   imports: [
@@ -24,11 +29,17 @@ import { TimecardComponent } from './timecard.component';
     TimecardRoutingModule
   ],
   declarations: [
+    AccrualComponent,
     AddDialogComponent,
+    AllocationComponent,
+    TableComponentComponent,
     TimecardComponent,
-    TableComponentComponent
+    TimecardInputComponent,
+    WamComponent
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   entryComponents: [
     AddDialogComponent
   ],
