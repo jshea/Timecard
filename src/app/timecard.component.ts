@@ -32,8 +32,19 @@ export class TimecardComponent implements OnInit {
 
   ngOnInit() {
     // Load up our data
-    this.timecard = this.userService.getTimecard();
-    this.wams = this.userService.getWams();
+    // this.timecard = this.userService.getTimecards();
+    this.userService.getTimecards().subscribe(
+      (timecards: Timecard[]) => {
+        this.timecard = timecards[0];
+      }
+    );
+
+    this.userService.getWams().subscribe(
+      (wams: WAM[]) => {
+        this.wams = wams;
+      }
+    );
+
     this.feature = 'timecard';                        // Default to timecard display
   }
 

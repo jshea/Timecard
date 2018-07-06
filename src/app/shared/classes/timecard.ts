@@ -4,6 +4,7 @@ import { Leave } from './leave';
 import { WAM } from './wam';
 
 export class Timecard {
+  id:          string;    // required by InMemoryDbService
   userId:      string;
   userName:    string;
   weekEndDate: string;
@@ -18,6 +19,7 @@ export class Timecard {
               accrual: Accrual,
               alloc: Allocation[],
               leave: Leave[]) {
+    this.id = weekEndDate;          // For InMemoryDbService
     this.userId = userId;
     this.userName = userName;
     this.weekEndDate = weekEndDate;
