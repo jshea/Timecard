@@ -1,4 +1,4 @@
-<div class="mat-elevation-z8">
+<div>
 
   <h3>WAMs</h3>
 
@@ -8,46 +8,48 @@
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
   </div>
--->
+  -->
 
-  <mat-table #table [dataSource]="dataSource" matSort>
+  <mat-table #table class="mat-elevation-z8" [dataSource]="dataSource" matSort>
 
     <ng-container matColumnDef="project">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Project </mat-header-cell>
-      <mat-cell *matCellDef="let wam"> {{wam.project}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Project</mat-header-cell>
+      <mat-cell *matCellDef="let wam">{{wam.project}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="projectName">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Project Name </mat-header-cell>
-      <mat-cell *matCellDef="let wam"> {{wam.projectName}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Project Name</mat-header-cell>
+      <mat-cell *matCellDef="let wam">{{wam.projectName}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="task">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Task </mat-header-cell>
-      <mat-cell *matCellDef="let wam"> {{wam.task}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Task</mat-header-cell>
+      <mat-cell *matCellDef="let wam">{{wam.task}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="taskName">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Task Name </mat-header-cell>
-      <mat-cell *matCellDef="let wam"> {{wam.taskName}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Task Name</mat-header-cell>
+      <mat-cell *matCellDef="let wam">{{wam.taskName}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="from">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> From </mat-header-cell>
-      <mat-cell *matCellDef="let wam"> {{wam.from | date:'shortDate'}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>From</mat-header-cell>
+      <mat-cell *matCellDef="let wam">{{wam.from | date:'shortDate'}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="to">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> To </mat-header-cell>
-      <mat-cell *matCellDef="let wam"> {{wam.to | date:'shortDate'}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>To</mat-header-cell>
+      <mat-cell *matCellDef="let wam">{{wam.to | date:'shortDate'}}</mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <!-- (click)="onRowClicked(row)" -->
+
   </mat-table>
 
   <mat-paginator #paginator
-    [length]="dataSource.data.length"
+    [length]="dataSource?.data.length"
     [pageIndex]="0"
     [pageSize]="5"
     [pageSizeOptions]="[5, 10, 20]">

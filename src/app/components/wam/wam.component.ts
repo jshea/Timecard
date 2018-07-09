@@ -14,8 +14,8 @@ export class WamComponent implements OnChanges, OnInit, AfterViewInit {
   @Input() wams: WAM[] = [];
 
   public displayedColumns = ['project', 'projectName', 'task', 'taskName', 'from', 'to'];
-  // Initialize to an empty datasource so ngAfterViewInit() won't error when wam data
-  // hasn't been passed yet.
+  // Initialize to an empty datasource so ngAfterViewInit() won't
+  // error when wam data hasn't been passed yet.
   public dataSource: MatTableDataSource<WAM> = new MatTableDataSource<WAM>();
 
   constructor() { }
@@ -31,10 +31,12 @@ export class WamComponent implements OnChanges, OnInit, AfterViewInit {
 
   ngOnInit() { }
 
+
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
+
 
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim();         // Remove whitespace

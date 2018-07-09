@@ -10,6 +10,7 @@ import { TableComponentDataSource } from './table-component-datasource';
 export class TableComponentComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+
   dataSource: TableComponentDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
