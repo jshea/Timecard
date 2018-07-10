@@ -3,6 +3,16 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 
 import { Allocation } from '../../shared/classes/allocation';
 
+/**
+ * Note this implementation of a Material Table sets the dataSource in the ngOnInit() function.
+ * This instance doesn't throw null errors like the WAMS component does! Is it a timing issue,
+ * this uses fewer data items and loads faster than the WAMS?
+ *
+ * @export
+ * @class AllocationComponent
+ * @implements {OnInit}
+ * @implements {AfterViewInit}
+ */
 @Component({
   selector:    'tc-allocation',
   templateUrl: './allocation.component.html',
@@ -30,9 +40,8 @@ export class AllocationComponent implements OnInit, AfterViewInit {
   }
 
   applyFilter(filterValue: string) {
-    filterValue = filterValue.trim();         // Remove whitespace
-    filterValue = filterValue.toLowerCase();  // MatTableDataSource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
+    // Remove whitespace, convert to lowercase since MatTableDataSource does lowercase matches
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }

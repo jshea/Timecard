@@ -5,6 +5,16 @@ import * as moment from 'moment';
 
 import { WAM } from '../../shared/classes/wam';
 
+/**
+ * Note this implementation of a Material Table resets the dataSource in the ngOnChanges() function.
+ * This instance will throw null errors! Is it a timing issue, this component uses more data items
+ * that take longer to load then the Allocation component?
+ *
+ * @export
+ * @class WamComponent
+ * @implements {OnChanges}
+ * @implements {OnInit}
+ */
 @Component({
   selector:    'tc-wam',
   templateUrl: './wam.component.html',

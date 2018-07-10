@@ -1,4 +1,4 @@
 .scroll-bars {
-  height: 400px;
+  max-height: 400px;
   overflow: auto;
 }
