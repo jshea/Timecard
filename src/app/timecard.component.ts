@@ -20,7 +20,7 @@ export class TimecardComponent implements OnInit {
   public wams: WAM[] = null;
   public feature: string;
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Tablet)
     .pipe(
       map(result => result.matches)
     );
