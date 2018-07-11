@@ -9,8 +9,10 @@ import { Accrual } from '../../shared/classes/accrual';
 })
 export class AccrualComponent implements OnInit {
 
-  @Input() weekEndDate: string;
-  @Input() accrual: Accrual;
+  // Default values to Karma doesn't throw
+  // Error: Failed to execute 'send' on 'XMLHttpRequest': Failed to load 'ng:///DynamicTestModule/AccrualComponent.ngfactory.js'
+  @Input() weekEndDate: string = '1970-01-01';
+  @Input() accrual: Accrual = new Accrual(0, 0, 0);
 
   constructor() { }
 
