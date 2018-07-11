@@ -1,6 +1,5 @@
 import { Accrual } from './accrual';
 import { Allocation } from './allocation';
-import { Leave } from './leave';
 import { WAM } from './wam';
 
 export class Timecard {
@@ -17,8 +16,7 @@ export class Timecard {
   constructor(userId: string, userName: string,
               weekEndDate: string, status: string,
               accrual: Accrual,
-              alloc: Allocation[],
-              leave: Leave[]) {
+              alloc: Allocation[]) {
     this.id = weekEndDate;          // For InMemoryDbService
     this.userId = userId;
     this.userName = userName;

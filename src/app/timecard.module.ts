@@ -13,7 +13,7 @@ import { environment } from '../environments/environment';
 import { TimecardRoutingModule } from './timecard-routing.module';
 
 import { UserService } from './shared/services/user.service';
-import { InMemoryTimecardService } from './shared/services/in-memory-timecard-service.service';
+import { InMemoryDataService } from './shared/services/in-memory-data.service';
 
 import { AccrualComponent } from './components/accrual/accrual.component';
 import { AddDialogComponent } from './components/add-dialog/add-dialog.component';
@@ -29,7 +29,7 @@ import { WamComponent } from './components/wam/wam.component';
     HttpClientModule,
     // After HttpClientModule
     // https://github.com/angular/in-memory-web-api#import-the-in-memory-web-api-module
-    InMemoryWebApiModule.forRoot(InMemoryTimecardService),
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     LayoutModule,
     MaterialModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),

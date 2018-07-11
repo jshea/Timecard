@@ -4,7 +4,6 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Timecard } from '../classes/timecard';
 import { Accrual } from '../classes/accrual';
 import { Allocation } from '../classes/allocation';
-import { Leave } from '../classes/leave';
 import { WAM } from '../classes/wam';
 
 /**
@@ -16,7 +15,7 @@ import { WAM } from '../classes/wam';
 @Injectable({
   providedIn: 'root'
 })
-export class InMemoryTimecardService {
+export class InMemoryDataService {
 
   constructor() { }
 
@@ -32,12 +31,10 @@ export class InMemoryTimecardService {
     const timecards = [
       new Timecard('fflintstone', 'Fred Flintstone', '2018-08-05', 'Incomplete',
         new Accrual(260.3, 456.7, 10),
-        [ new Allocation('123456', 'A fun task', 10) ],
-        [ new Leave('Vacation', 285.6), new Leave('Sick', 593), new Leave('Personal', 8) ],
+        [ new Allocation('123456', 'A fun task', 10) ]
       ),
       new Timecard('fflintstone', 'Fred Flintstone', '2018-08-12', 'Incomplete',
         new Accrual(260.3, 456.7, 10),
-        [],
         []
       )
     ];

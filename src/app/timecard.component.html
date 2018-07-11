@@ -49,8 +49,9 @@
         </tc-timecard-input>
 
         <tc-accrual *ngIf="feature === 'accrual'"
+          [weekEndDate]="timecard.weekEndDate"
           [accrual]="timecard.accrual">
-        </tc-accrual>
+      </tc-accrual>
 
         <tc-wam *ngIf="feature === 'wam'"
           [wams]="wams">
