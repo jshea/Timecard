@@ -1,5 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
 
+    <!-- Left side drawer -->
     <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
                  [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                  [mode]="(isHandset$ | async) ? 'over' : 'side'"
@@ -9,21 +10,22 @@
 
       <mat-nav-list>
         <mat-list-item (click)="onListItemClick('timecard')">Timecard</mat-list-item>
-        <mat-list-item (click)="onListItemClick('allocations')">Allocations</mat-list-item>
         <mat-list-item (click)="onListItemClick('accrual')">Accruals</mat-list-item>
         <mat-list-item (click)="onListItemClick('wam')">WAMs</mat-list-item>
       </mat-nav-list>
     </mat-sidenav>
 
+    <!-- Main content -->
     <mat-sidenav-content>
 
+      <!-- Toolbar -->
       <mat-toolbar color="primary">
 
         <button type="button" mat-icon-button *ngIf="isHandset$ | async" (click)="drawer.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
 
-        <span>Application Title</span>
+        <span>Timecard for {{timecard.userName}}</span>
 
         <span class="example-spacer"></span>
 
@@ -38,15 +40,13 @@
 
       </mat-toolbar>
 
+      <!-- Page Contents -->
       <div class="wrapper">
+
         <tc-timecard-input *ngIf="feature === 'timecard'"
           [timecard]="timecard"
           [wams]="wams">
         </tc-timecard-input>
-
-        <tc-allocation *ngIf="feature === 'allocations'"
-          [allocation]="timecard.allocation">
-        </tc-allocation>
 
         <tc-accrual *ngIf="feature === 'accrual'"
           [accrual]="timecard.accrual">

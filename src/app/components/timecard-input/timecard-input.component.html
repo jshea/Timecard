@@ -8,35 +8,12 @@
 
     <mat-card-header>
       <mat-card-title>
-        <h1>{{timecard.userName}}</h1>
+        Week ending {{timecard.weekEndDate | date:'shortDate'}}
       </mat-card-title>
-      <mat-card-subtitle>
-        <h2>Week ending {{timecard.weekEndDate | date:'shortDate'}}</h2>
-      </mat-card-subtitle>
     </mat-card-header>
 
     <mat-card-content>
-      <mat-tab-group>
-
-        <mat-tab label="All">
-          <tc-allocation [allocation]="timecard.allocation"></tc-allocation>
-          <tc-accrual [accrual]="timecard.accrual"></tc-accrual>
-          <tc-wam [wams]="wams"></tc-wam>
-        </mat-tab>
-
-        <mat-tab label="Allocations">
-          <tc-allocation [allocation]="timecard.allocation"></tc-allocation>
-        </mat-tab>
-
-        <mat-tab label="Accrual">
-          <tc-accrual [accrual]="timecard.accrual"></tc-accrual>
-        </mat-tab>
-
-        <mat-tab label="WAM">
-          <tc-wam [wams]="wams"></tc-wam>
-        </mat-tab>
-
-      </mat-tab-group>
+      <tc-allocation [allocation]="timecard.allocation"></tc-allocation>
     </mat-card-content>
 
   </mat-card>
